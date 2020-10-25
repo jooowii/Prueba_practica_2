@@ -1,0 +1,55 @@
+﻿@page
+@model Prueba_practica_2.Pages.Empleados.CreateModel
+
+@{
+    ViewData["Title"] = "Añadir registro";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Añadir registro</h1>
+
+<h4>Empleado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input asp-for="Empleado.nombre" class="form-control" />
+                <span asp-validation-for="Empleado.nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input asp-for="Empleado.apellido" class="form-control" />
+                <span asp-validation-for="Empleado.apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Fecha de nacimiento</label>
+                <input asp-for="Empleado.fechaNacimiento" class="form-control" />
+                <span asp-validation-for="Empleado.fechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Empleado.email" class="form-control" />
+                <span asp-validation-for="Empleado.email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input asp-for="Empleado.telefono" class="form-control" />
+                <span asp-validation-for="Empleado.telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Añadir" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver a índice</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
